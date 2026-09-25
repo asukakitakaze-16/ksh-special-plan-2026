@@ -5357,6 +5357,20 @@ main * {
 @media (max-width:900px){
   .kbs-section{padding:80px 0}.kbs-hero{min-height:650px}.kbs-pillars .kbs-pillar-grid{grid-template-columns:1fr 1fr}.kbs-heading-row,.kbs-intro__grid,.kbs-scene__grid{grid-template-columns:1fr;gap:42px}.kbs-heading-row>p{max-width:650px}.kbs-eventbar__inner{grid-template-columns:1fr 1fr}.kbs-eventbar p:last-child{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14)}.kbs-audience__grid{grid-template-columns:1fr}.kbs-concept__visual{aspect-ratio:16/7}.kbs-cta__inner{align-items:flex-start;flex-direction:column}
 }
+
+/* Supplied FV image: keep its natural aspect ratio at every breakpoint. */
+.kbs-hero.kbs-hero--image-only { min-height:0; display:block; background:#fff; }
+.kbs-eventbar__booking { display:flex; align-items:center; justify-content:center; padding:18px 28px; border-left:1px solid rgba(255,255,255,.14); border-right:1px solid rgba(255,255,255,.14); }
+.kbs-eventbar__booking-button { display:inline-flex; align-items:center; justify-content:center; min-width:230px; padding:15px 28px; border-radius:999px; color:var(--navy); background:#fff; font-size:1.7rem; font-weight:900; text-decoration:none; transition:transform .2s,box-shadow .2s,background .2s; }
+.kbs-eventbar__booking-button::after { content:"→"; margin-left:18px; color:var(--gold); }
+.kbs-eventbar__booking-button:hover { transform:translateY(-2px); background:#fff8e9; box-shadow:0 8px 20px rgba(0,0,0,.22); }
+@media (max-width:900px){
+  .kbs-eventbar__booking{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14)}
+}
+@media (max-width:600px){
+  .kbs-eventbar__booking{grid-column:auto;padding:18px 20px;border-top:0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .kbs-eventbar__booking-button{width:100%;min-width:0}
+}
 @media (max-width:600px){
   .kbs-shell{width:min(100% - 30px,1180px)}.kbs-section{padding:65px 0}.kbs-hero{min-height:700px}.kbs-hero__shade{background:linear-gradient(180deg,rgba(4,18,33,.76),rgba(4,18,33,.94))}.kbs-hero__inner{padding-block:62px}.kbs-eyebrow{align-items:flex-start;flex-direction:column;font-size:1.2rem}.kbs-brand-lockup__map{width:56px;height:56px;font-size:1.3rem}.kbs-brand-lockup>span:last-child{font-size:1.9rem;gap:5px}.kbs-brand-lockup strong{font-size:2.2rem}.kbs-brand-lockup small{font-size:1.1rem}.kbs-hero h1{font-size:4rem}.kbs-hero__lead{font-size:1.55rem}.kbs-button{min-width:0;width:100%;font-size:1.6rem}.kbs-eventbar__inner{grid-template-columns:1fr}.kbs-eventbar p,.kbs-eventbar p:last-child{grid-column:auto;border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:20px}.kbs-eventbar strong{font-size:1.65rem}.kbs-section h2{font-size:3.1rem}.kbs-intro__copy p{font-size:1.55rem}.kbs-heading-row{margin-bottom:36px}.kbs-heading-row>p{padding-left:18px;font-size:1.5rem}.kbs-pillars .kbs-pillar-grid{grid-template-columns:1fr 1fr;gap:10px}.kbs-pillar{min-height:270px;padding:22px}.kbs-pillar__char{margin:25px 0 20px;font-size:5.2rem}.kbs-pillar h3{font-size:2.2rem}.kbs-pillar p{font-size:1.35rem}.kbs-experience__grid{grid-template-columns:1fr}.kbs-experience article{padding:32px}.kbs-concept__visual{aspect-ratio:4/3}.kbs-concept__visual img{width:auto;min-width:190%;object-position:top left}.kbs-concept__caption{text-align:left}.kbs-scene__grid{gap:48px}.kbs-scene__image{box-shadow:10px 10px 0 #d7ba78}.kbs-audience__grid{margin-top:35px}.kbs-cta{padding:70px 0}.kbs-cta h2{font-size:3.2rem}
 }
@@ -5689,7 +5703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="kbs-shell kbs-eventbar__inner">
                 <p><span>DATE</span><strong>2026.10.28 <small>水</small> — 29 <small>木</small></strong></p>
                 <p><span>VENUE</span><strong>マリンメッセ福岡 B館</strong></p>
-                <p><span>ADMISSION</span><strong>来場事前登録制</strong></p>
+                <div class="kbs-eventbar__booking"><a class="kbs-eventbar__booking-button" href="https://velsion.jp/kyusyu-2026/visitor/register/terms">来場事前予約</a></div>
             </div>
         </section>
 
