@@ -8,6 +8,8 @@
 .kbs-hero { position: relative; min-height: 700px; display: grid; align-items: center; color: white; isolation: isolate; }
 .kbs-hero__image,.kbs-hero__shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .kbs-hero__image { object-fit: cover; object-position: center; z-index: -2; }
+.kbs-hero--image-only { min-height: 0; display: block; background: #fff; }
+.kbs-hero--image-only .kbs-hero__image { position: static; display: block; width: 100%; height: auto; object-fit: contain; z-index: auto; }
 .kbs-hero__shade { z-index: -1; background: linear-gradient(90deg, rgba(5,20,37,.96) 0%, rgba(5,20,37,.82) 37%, rgba(5,20,37,.22) 72%, rgba(5,20,37,.45) 100%); }
 .kbs-hero__inner { padding-block: 88px; }
 .kbs-eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 30px; font-size: 1.5rem; font-weight: 800; letter-spacing: .14em; }
@@ -55,6 +57,17 @@
 .kbs-experience h3 { margin:0 0 18px; font-size:2.8rem; }
 .kbs-experience article > p:last-child { margin:0; font-size:1.65rem; line-height:2; }
 .kbs-note { margin:28px 0 0; color:#cbd5e1; font-size:1.35rem; }
+.kbs-schedule { background:linear-gradient(180deg,#fff 0%,#f7f3e9 100%); }
+.kbs-schedule__heading { align-items:center; }
+.kbs-schedule__list { display:grid; gap:42px; }
+.kbs-schedule__day { margin:0; overflow:hidden; border:1px solid #dfd4bd; border-radius:18px; background:#fff; box-shadow:0 18px 48px rgba(13,39,69,.11); }
+.kbs-schedule__day figcaption { display:flex; align-items:center; gap:18px; padding:18px 26px; color:#fff; background:var(--navy); }
+.kbs-schedule__day figcaption span { display:inline-flex; align-items:center; min-height:32px; padding:0 12px; border:1px solid rgba(255,255,255,.45); border-radius:999px; color:#e4bd69; font:800 1.2rem/1 Jost,sans-serif; letter-spacing:.14em; }
+.kbs-schedule__day figcaption strong { font-size:2rem; letter-spacing:.05em; }
+.kbs-schedule__day a { display:block; background:#080d12; }
+.kbs-schedule__day img { display:block; width:100%; height:auto; transition:opacity .2s; }
+.kbs-schedule__day a:hover img { opacity:.92; }
+.kbs-schedule__hint { margin:20px 0 0; color:#657388; font-size:1.35rem; text-align:right; }
 .kbs-concept { background:#fff; }
 .kbs-concept__visual { position:relative; overflow:hidden; margin:0; aspect-ratio:1672/610; background:#0b1d30; }
 .kbs-concept__visual img { width:100%; height:100%; object-fit:cover; object-position:top center; }
@@ -79,6 +92,20 @@
 @media (max-width:900px){
   .kbs-section{padding:80px 0}.kbs-hero{min-height:650px}.kbs-pillars .kbs-pillar-grid{grid-template-columns:1fr 1fr}.kbs-heading-row,.kbs-intro__grid,.kbs-scene__grid{grid-template-columns:1fr;gap:42px}.kbs-heading-row>p{max-width:650px}.kbs-eventbar__inner{grid-template-columns:1fr 1fr}.kbs-eventbar p:last-child{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14)}.kbs-audience__grid{grid-template-columns:1fr}.kbs-concept__visual{aspect-ratio:16/7}.kbs-cta__inner{align-items:flex-start;flex-direction:column}
 }
+
+/* Supplied FV image: keep its natural aspect ratio at every breakpoint. */
+.kbs-hero.kbs-hero--image-only { min-height:0; display:block; background:#fff; }
+.kbs-eventbar__booking { display:flex; align-items:center; justify-content:center; padding:18px 28px; border-left:1px solid rgba(255,255,255,.14); border-right:1px solid rgba(255,255,255,.14); }
+.kbs-eventbar__booking-button { display:inline-flex; align-items:center; justify-content:center; min-width:230px; padding:15px 28px; border-radius:999px; color:var(--navy); background:#fff; font-size:1.7rem; font-weight:900; text-decoration:none; transition:transform .2s,box-shadow .2s,background .2s; }
+.kbs-eventbar__booking-button::after { content:"→"; margin-left:18px; color:var(--gold); }
+.kbs-eventbar__booking-button:hover { transform:translateY(-2px); background:#fff8e9; box-shadow:0 8px 20px rgba(0,0,0,.22); }
+@media (max-width:900px){
+  .kbs-eventbar__booking{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14)}
+}
 @media (max-width:600px){
-  .kbs-shell{width:min(100% - 30px,1180px)}.kbs-section{padding:65px 0}.kbs-hero{min-height:700px}.kbs-hero__shade{background:linear-gradient(180deg,rgba(4,18,33,.76),rgba(4,18,33,.94))}.kbs-hero__inner{padding-block:62px}.kbs-eyebrow{align-items:flex-start;flex-direction:column;font-size:1.2rem}.kbs-brand-lockup__map{width:56px;height:56px;font-size:1.3rem}.kbs-brand-lockup>span:last-child{font-size:1.9rem;gap:5px}.kbs-brand-lockup strong{font-size:2.2rem}.kbs-brand-lockup small{font-size:1.1rem}.kbs-hero h1{font-size:4rem}.kbs-hero__lead{font-size:1.55rem}.kbs-button{min-width:0;width:100%;font-size:1.6rem}.kbs-eventbar__inner{grid-template-columns:1fr}.kbs-eventbar p,.kbs-eventbar p:last-child{grid-column:auto;border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:20px}.kbs-eventbar strong{font-size:1.65rem}.kbs-section h2{font-size:3.1rem}.kbs-intro__copy p{font-size:1.55rem}.kbs-heading-row{margin-bottom:36px}.kbs-heading-row>p{padding-left:18px;font-size:1.5rem}.kbs-pillars .kbs-pillar-grid{grid-template-columns:1fr 1fr;gap:10px}.kbs-pillar{min-height:270px;padding:22px}.kbs-pillar__char{margin:25px 0 20px;font-size:5.2rem}.kbs-pillar h3{font-size:2.2rem}.kbs-pillar p{font-size:1.35rem}.kbs-experience__grid{grid-template-columns:1fr}.kbs-experience article{padding:32px}.kbs-concept__visual{aspect-ratio:4/3}.kbs-concept__visual img{width:auto;min-width:190%;object-position:top left}.kbs-concept__caption{text-align:left}.kbs-scene__grid{gap:48px}.kbs-scene__image{box-shadow:10px 10px 0 #d7ba78}.kbs-audience__grid{margin-top:35px}.kbs-cta{padding:70px 0}.kbs-cta h2{font-size:3.2rem}
+  .kbs-eventbar__booking{grid-column:auto;padding:18px 20px;border-top:0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .kbs-eventbar__booking-button{width:100%;min-width:0}
+}
+@media (max-width:600px){
+  .kbs-shell{width:min(100% - 30px,1180px)}.kbs-section{padding:65px 0}.kbs-hero{min-height:700px}.kbs-hero__shade{background:linear-gradient(180deg,rgba(4,18,33,.76),rgba(4,18,33,.94))}.kbs-hero__inner{padding-block:62px}.kbs-eyebrow{align-items:flex-start;flex-direction:column;font-size:1.2rem}.kbs-brand-lockup__map{width:56px;height:56px;font-size:1.3rem}.kbs-brand-lockup>span:last-child{font-size:1.9rem;gap:5px}.kbs-brand-lockup strong{font-size:2.2rem}.kbs-brand-lockup small{font-size:1.1rem}.kbs-hero h1{font-size:4rem}.kbs-hero__lead{font-size:1.55rem}.kbs-button{min-width:0;width:100%;font-size:1.6rem}.kbs-eventbar__inner{grid-template-columns:1fr}.kbs-eventbar p,.kbs-eventbar p:last-child{grid-column:auto;border-right:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14);padding:20px}.kbs-eventbar strong{font-size:1.65rem}.kbs-section h2{font-size:3.1rem}.kbs-intro__copy p{font-size:1.55rem}.kbs-heading-row{margin-bottom:36px}.kbs-heading-row>p{padding-left:18px;font-size:1.5rem}.kbs-pillars .kbs-pillar-grid{grid-template-columns:1fr 1fr;gap:10px}.kbs-pillar{min-height:270px;padding:22px}.kbs-pillar__char{margin:25px 0 20px;font-size:5.2rem}.kbs-pillar h3{font-size:2.2rem}.kbs-pillar p{font-size:1.35rem}.kbs-experience__grid{grid-template-columns:1fr}.kbs-experience article{padding:32px}.kbs-schedule__list{gap:26px}.kbs-schedule__day{border-radius:10px}.kbs-schedule__day figcaption{padding:14px 16px}.kbs-schedule__day figcaption strong{font-size:1.65rem}.kbs-schedule__hint{text-align:left}.kbs-concept__visual{aspect-ratio:4/3}.kbs-concept__visual img{width:auto;min-width:190%;object-position:top left}.kbs-concept__caption{text-align:left}.kbs-scene__grid{gap:48px}.kbs-scene__image{box-shadow:10px 10px 0 #d7ba78}.kbs-audience__grid{margin-top:35px}.kbs-cta{padding:70px 0}.kbs-cta h2{font-size:3.2rem}
 }
